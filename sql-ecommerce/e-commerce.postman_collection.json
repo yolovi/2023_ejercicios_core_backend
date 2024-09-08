@@ -1,0 +1,2287 @@
+{
+	"info": {
+		"_postman_id": "a7b316a8-4293-4e15-970c-8ba60d20dd92",
+		"name": "e-commerce",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28231675",
+		"_collection_link": "https://orange-equinox-124035.postman.co/workspace/The-Bridge-2023~1eafea19-21b9-4820-9373-ee167b91e792/collection/28231675-a7b316a8-4293-4e15-970c-8ba60d20dd92?action=share&creator=28231675&source=collection_link"
+	},
+	"item": [
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "CREATE PRODUCT",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseJson = pm.response.json();\r",
+									"let token = responseJson.token;\r",
+									"pm.environment.set(\"token_devuelto_por_servidor\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTY4ODU4MzE2Nn0.pHB2qmXpicoq_wnoseffpogEa9mX0VChIoYNyAOyc7I",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name_product\": \"NewLamp\",\r\n    \"price\": \"40.5\", \r\n    \"CategoryId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATE PRODUCT",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTY4ODU4MzE2Nn0.pHB2qmXpicoq_wnoseffpogEa9mX0VChIoYNyAOyc7I",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "{{tokenUser}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n   \"name_product\": \"NewLamp\",\r\n    \"price\": 40.5, \r\n    \"CategoryId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "192"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c0-UqLdYybLCzfOe8m4u+ZgeB4dUQc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:53:01 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Product created successfully\",\n    \"product\": {\n        \"id\": 9,\n        \"name_product\": \"NewLamp\",\n        \"price\": 40.5,\n        \"CategoryId\": 3,\n        \"updatedAt\": \"2023-07-10T13:53:01.593Z\",\n        \"createdAt\": \"2023-07-10T13:53:01.593Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CREATE PRODUCT validation all completed",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"onst responseJson = pm.response.json();\r",
+									"let token = responseJson.token;\r",
+									"pm.environment.set(\"token_devuelto_por_servidor\", token);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTY4ODU4MzE2Nn0.pHB2qmXpicoq_wnoseffpogEa9mX0VChIoYNyAOyc7I",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \r\n \r\n    \"CategoryId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATE PRODUCT validation all completed",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTY4ODU4MzE2Nn0.pHB2qmXpicoq_wnoseffpogEa9mX0VChIoYNyAOyc7I",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "{{tokenUser}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n \r\n \r\n    \"CategoryId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "70"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"46-XsOywESHQLMvJrSLKp6zInY3R6c\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:53:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"messages\": \"Please, insert a name product || Please, insert a price\"\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE PRODUCT",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"price\": \"40\" \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/id/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"id",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UPDATE PRODUCT",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{tokenUser}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"price\": \"40\" \r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products/id/9",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"id",
+										"9"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "193"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"c1-uY58WGkUOr9iwvaaWFqtNc4p4wA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:53:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Product updated successfully\",\n    \"productUpdated\": {\n        \"id\": 9,\n        \"name_product\": \"NewLamp\",\n        \"price\": 40,\n        \"CategoryId\": 3,\n        \"createdAt\": \"2023-07-10T13:53:01.000Z\",\n        \"updatedAt\": \"2023-07-10T13:53:55.000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE PRODUCT",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTY4ODU4MzE2Nn0.pHB2qmXpicoq_wnoseffpogEa9mX0VChIoYNyAOyc7I",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "javascript"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/id/9",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"id",
+								"9"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE PRODUCT",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MTEsImlhdCI6MTY4ODU4MzE2Nn0.pHB2qmXpicoq_wnoseffpogEa9mX0VChIoYNyAOyc7I",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "{{tokenAdmin}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "javascript"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products/id/9",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"id",
+										"9"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "28"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1c-pzVVEoLQTIO5MZGsPyS4BFSeTZs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:55:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Product deleted successfully"
+						}
+					]
+				},
+				{
+					"name": "SHOW ONE PRODUCT BY ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/products/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ONE PRODUCT BY ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/products/id/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"id",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "156"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"9c-2VbZpfjcXgXmrK4deayzKsII3jE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:55:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name_product\": \"Art Deco Gatsby Lamp Brace\",\n    \"price\": 50,\n    \"CategoryId\": 1,\n    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n    \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "SHOW ONE PRODUCT BY NAME not case sensitive",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/name_product/mo",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"name_product",
+								"mo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ONE PRODUCT BY NAME not case sensitive",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products/name_product/mo",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"name_product",
+										"mo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "148"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"94-m1mRJ2Wlza8FI/EacCIGB9BREQU\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:55:40 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 5,\n    \"name_product\": \"Modern Rail Black\",\n    \"price\": 120,\n    \"CategoryId\": 3,\n    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n    \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "SHOW PRODUCTS BY PRICE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/price/30",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"price",
+								"30"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW PRODUCTS BY PRICE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products/price/30",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"price",
+										"30"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "149"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"95-6qWYDX73fkQpWOzstg9qbe5k4l4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:55:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 8,\n        \"name_product\": \"Nordic Floor Lamp\",\n        \"price\": 30,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "FILTER PRODUCTS BY PRICE RANGE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/price_range?min=5&max=40",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"price_range"
+							],
+							"query": [
+								{
+									"key": "min",
+									"value": "5"
+								},
+								{
+									"key": "max",
+									"value": "40"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "FILTER PRODUCTS BY PRICE RANGE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products/price_range?min=5&max=40",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"price_range"
+									],
+									"query": [
+										{
+											"key": "min",
+											"value": "5"
+										},
+										{
+											"key": "max",
+											"value": "40"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "303"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"12f-H3NLCGSAX8ATzxcPF5xb1jus6Zg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:57:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 2,\n        \"name_product\": \"Industrial Wall Lamp\",\n        \"price\": 34.95,\n        \"CategoryId\": 1,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 8,\n        \"name_product\": \"Nordic Floor Lamp\",\n        \"price\": 30,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ORDER BY DESC PRICE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/price_desc",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"price_desc"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ORDER BY DESC PRICE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products/price_desc",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"price_desc"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1211"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4bb-79NbUBBVe8Hc+3thkLF1dP9iIkk\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:58:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 6,\n        \"name_product\": \"Art Deco Ceiling Lamp\",\n        \"price\": 420,\n        \"CategoryId\": 3,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 5,\n        \"name_product\": \"Modern Rail Black\",\n        \"price\": 120,\n        \"CategoryId\": 3,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 7,\n        \"name_product\": \"Modern Floor Lamp\",\n        \"price\": 100,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 3,\n        \"name_product\": \"Art Deco Gatsby Lamp\",\n        \"price\": 64.95,\n        \"CategoryId\": 2,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 1,\n        \"name_product\": \"Art Deco Gatsby Lamp Brace\",\n        \"price\": 50,\n        \"CategoryId\": 1,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 4,\n        \"name_product\": \"Industrial Lamp\",\n        \"price\": 44,\n        \"CategoryId\": 2,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 2,\n        \"name_product\": \"Industrial Wall Lamp\",\n        \"price\": 34.95,\n        \"CategoryId\": 1,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 8,\n        \"name_product\": \"Nordic Floor Lamp\",\n        \"price\": 30,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "ORDER BY ASC PRICE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/price_asc",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"price_asc"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "ORDER BY ASC PRICE",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products/price_asc",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"price_asc"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1211"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4bb-3iyIIr3WZWDWaKfTSV0RD5xZ3bw\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:58:31 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 8,\n        \"name_product\": \"Nordic Floor Lamp\",\n        \"price\": 30,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 2,\n        \"name_product\": \"Industrial Wall Lamp\",\n        \"price\": 34.95,\n        \"CategoryId\": 1,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 4,\n        \"name_product\": \"Industrial Lamp\",\n        \"price\": 44,\n        \"CategoryId\": 2,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 1,\n        \"name_product\": \"Art Deco Gatsby Lamp Brace\",\n        \"price\": 50,\n        \"CategoryId\": 1,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 3,\n        \"name_product\": \"Art Deco Gatsby Lamp\",\n        \"price\": 64.95,\n        \"CategoryId\": 2,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 7,\n        \"name_product\": \"Modern Floor Lamp\",\n        \"price\": 100,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 5,\n        \"name_product\": \"Modern Rail Black\",\n        \"price\": 120,\n        \"CategoryId\": 3,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 6,\n        \"name_product\": \"Art Deco Ceiling Lamp\",\n        \"price\": 420,\n        \"CategoryId\": 3,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "SHOW ALL PRODUCTS with its Category ",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/products/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"products",
+								"getAll"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ALL PRODUCTS with its Category ",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/products/getAll",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"products",
+										"getAll"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1565"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"61d-YU/Vt1QsMsut4NTe93DkHSOnDcc\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:58:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name_product\": \"Art Deco Gatsby Lamp Brace\",\n        \"price\": 50,\n        \"CategoryId\": 1,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Wall Lights\"\n        }\n    },\n    {\n        \"id\": 2,\n        \"name_product\": \"Industrial Wall Lamp\",\n        \"price\": 34.95,\n        \"CategoryId\": 1,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Wall Lights\"\n        }\n    },\n    {\n        \"id\": 3,\n        \"name_product\": \"Art Deco Gatsby Lamp\",\n        \"price\": 64.95,\n        \"CategoryId\": 2,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Pendant Lights\"\n        }\n    },\n    {\n        \"id\": 4,\n        \"name_product\": \"Industrial Lamp\",\n        \"price\": 44,\n        \"CategoryId\": 2,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Pendant Lights\"\n        }\n    },\n    {\n        \"id\": 5,\n        \"name_product\": \"Modern Rail Black\",\n        \"price\": 120,\n        \"CategoryId\": 3,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Ceiling Lights\"\n        }\n    },\n    {\n        \"id\": 6,\n        \"name_product\": \"Art Deco Ceiling Lamp\",\n        \"price\": 420,\n        \"CategoryId\": 3,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Ceiling Lights\"\n        }\n    },\n    {\n        \"id\": 7,\n        \"name_product\": \"Modern Floor Lamp\",\n        \"price\": 100,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Floor Lamp\"\n        }\n    },\n    {\n        \"id\": 8,\n        \"name_product\": \"Nordic Floor Lamp\",\n        \"price\": 30,\n        \"CategoryId\": 4,\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Category\": {\n            \"name_category\": \"Floor Lamp\"\n        }\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "CREATE USER register with bcrypt",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name_user\": \"Alison\",\r\n    \"last_name\": \"Smith\",\r\n    \"email\": \"alisonSmith@example.com\",\r\n    \"password\": \"qwertys\"\r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATE USER register with bcrypt",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_user\": \"Alison\",\r\n    \"last_name\": \"Smith\",\r\n    \"email\": \"alisonSmith@example.com\",\r\n    \"password\": \"qwertys\"\r\n\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "296"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"128-WhMSxIHqtZmaPos6VXM+L6IGks4\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:59:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"User created successfully\",\n    \"user\": {\n        \"id\": 9,\n        \"name_user\": \"Alison\",\n        \"last_name\": \"Smith\",\n        \"email\": \"alisonSmith@example.com\",\n        \"password\": \"$2a$10$b/sQ0PAqx1dEuZJAgYVAiu6kxnkGEuLAzBr0Db0XbCtntCfRQHMt6\",\n        \"role\": \"user\",\n        \"updatedAt\": \"2023-07-10T13:59:34.138Z\",\n        \"createdAt\": \"2023-07-10T13:59:34.138Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGIN USER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"bob@example.com\",\r\n  \"password\": \"abc123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/users/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGIN USER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"bob@example.com\",\r\n  \"password\": \"abc123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "399"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18f-UUGo2r9g78AaEc19pndU3WTk7Q0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:59:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Welcome Bob\",\n    \"user\": {\n        \"id\": 3,\n        \"name_user\": \"Bob\",\n        \"last_name\": \"Johnson\",\n        \"email\": \"bob@example.com\",\n        \"password\": \"$2a$10$grFh.AsfziU7gZnBFs2sAeRBFPbuDO/MqFsctOlDVvHQXBvLE/wPa\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjg4OTk3NTg4fQ.p6AK98yFBD9XpUuSNHLj5tAIl73XoGZ8is7nZ5fuRTI\"\n}"
+						},
+						{
+							"name": "LOGIN USER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"bob@example.com\",\r\n  \"password\": \"abc123\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/users/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "399"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18f-UUGo2r9g78AaEc19pndU3WTk7Q0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 13:59:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Welcome Bob\",\n    \"user\": {\n        \"id\": 3,\n        \"name_user\": \"Bob\",\n        \"last_name\": \"Johnson\",\n        \"email\": \"bob@example.com\",\n        \"password\": \"$2a$10$grFh.AsfziU7gZnBFs2sAeRBFPbuDO/MqFsctOlDVvHQXBvLE/wPa\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MywiaWF0IjoxNjg4OTk3NTg4fQ.p6AK98yFBD9XpUuSNHLj5tAIl73XoGZ8is7nZ5fuRTI\"\n}"
+						}
+					]
+				},
+				{
+					"name": "SHOW ALL USERS",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/users/allUsers",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"allUsers"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ALL USERS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{tokenUser}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{tokenAdmin}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/users/allUsers",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"allUsers"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2197"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"895-easS22hh6rRSwoD3+ppevUOjgRI\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:00:06 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name_user\": \"John\",\n        \"last_name\": \"Doe\",\n        \"email\": \"example@example.com\",\n        \"password\": \"$2a$10$9/uWf7yTZNoVsCwnIEPwYetGz0lkMPFCKVWJ/GolTmM5JLLSck1oS\",\n        \"role\": \"superadmin\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 2,\n        \"name_user\": \"Alice\",\n        \"last_name\": \"Smith\",\n        \"email\": \"alice@example.com\",\n        \"password\": \"$2a$10$bEYlb7GtUpwfktiqOtAuL.R32y0f//VmuzQ5cv/BE/IfPL6HgOOVm\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 3,\n        \"name_user\": \"Bob\",\n        \"last_name\": \"Johnson\",\n        \"email\": \"bob@example.com\",\n        \"password\": \"$2a$10$grFh.AsfziU7gZnBFs2sAeRBFPbuDO/MqFsctOlDVvHQXBvLE/wPa\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 4,\n        \"name_user\": \"Emma\",\n        \"last_name\": \"Wilson\",\n        \"email\": \"emma@example.com\",\n        \"password\": \"$2a$10$69FlheAyx3BAVfhv62.vLOMHsGUf1GXFdet93Zj9BdIRFx9oA0Db.\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 5,\n        \"name_user\": \"David\",\n        \"last_name\": \"Brown\",\n        \"email\": \"david@example.com\",\n        \"password\": \"$2a$10$Mt.eztNlHcc/bS2lRiTenuToaNcwhUz3DpceAU0suhKQRQPlNkDwa\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 6,\n        \"name_user\": \"Sophia\",\n        \"last_name\": \"Lee\",\n        \"email\": \"sophia@example.com\",\n        \"password\": \"$2a$10$TYCbrYJfbuKk55yHcql/FOsF0p3FDmH4AxFRrIEcMyyXkbSdaXMjG\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 7,\n        \"name_user\": \"Oliver\",\n        \"last_name\": \"Clark\",\n        \"email\": \"oliver@example.com\",\n        \"password\": \"$2a$10$5KdyZ5IIXE9.YNVBhBv3P.joASJO8wmAZh7W.pbEmvSNxOYTBVyAC\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 8,\n        \"name_user\": \"Mia\",\n        \"last_name\": \"Taylor\",\n        \"email\": \"mia@example.com\",\n        \"password\": \"$2a$10$PAjyTj2R06FLov09ii/Fd.b4AQk/xHHwcz/aw0sM6hf2wc7.LScCS\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n    },\n    {\n        \"id\": 9,\n        \"name_user\": \"Alison\",\n        \"last_name\": \"Smith\",\n        \"email\": \"alisonSmith@example.com\",\n        \"password\": \"$2a$10$b/sQ0PAqx1dEuZJAgYVAiu6kxnkGEuLAzBr0Db0XbCtntCfRQHMt6\",\n        \"role\": \"user\",\n        \"createdAt\": \"2023-07-10T13:59:34.000Z\",\n        \"updatedAt\": \"2023-07-10T13:59:34.000Z\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "SHOW ORDERS USER LOGGED",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/users/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ORDERS USER LOGGED",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{tokenUser}}",
+										"type": "text"
+									},
+									{
+										"key": "Authorization",
+										"value": "{{tokenAdmin}}",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/users/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1560"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"618-KNElSt44C6gBSgLqEAD0umQu/VA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:01:54 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"name_user\": \"Bob\",\n    \"last_name\": \"Johnson\",\n    \"email\": \"bob@example.com\",\n    \"password\": \"$2a$10$grFh.AsfziU7gZnBFs2sAeRBFPbuDO/MqFsctOlDVvHQXBvLE/wPa\",\n    \"role\": \"user\",\n    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n    \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n    \"Orders\": [\n        {\n            \"id\": 3,\n            \"UserId\": 3,\n            \"createdAt\": \"2023-07-10T14:01:11.000Z\",\n            \"updatedAt\": \"2023-07-10T14:01:11.000Z\",\n            \"Products\": [\n                {\n                    \"id\": 5,\n                    \"name_product\": \"Modern Rail Black\",\n                    \"price\": 120,\n                    \"CategoryId\": 3,\n                    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"Order_Product\": {\n                        \"ProductId\": 5,\n                        \"OrderId\": 3,\n                        \"createdAt\": \"2023-07-10T14:01:11.000Z\",\n                        \"updatedAt\": \"2023-07-10T14:01:11.000Z\"\n                    }\n                }\n            ]\n        },\n        {\n            \"id\": 4,\n            \"UserId\": 3,\n            \"createdAt\": \"2023-07-10T14:01:22.000Z\",\n            \"updatedAt\": \"2023-07-10T14:01:22.000Z\",\n            \"Products\": [\n                {\n                    \"id\": 6,\n                    \"name_product\": \"Art Deco Ceiling Lamp\",\n                    \"price\": 420,\n                    \"CategoryId\": 3,\n                    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"Order_Product\": {\n                        \"ProductId\": 6,\n                        \"OrderId\": 4,\n                        \"createdAt\": \"2023-07-10T14:01:22.000Z\",\n                        \"updatedAt\": \"2023-07-10T14:01:22.000Z\"\n                    }\n                },\n                {\n                    \"id\": 7,\n                    \"name_product\": \"Modern Floor Lamp\",\n                    \"price\": 100,\n                    \"CategoryId\": 4,\n                    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"Order_Product\": {\n                        \"ProductId\": 7,\n                        \"OrderId\": 4,\n                        \"createdAt\": \"2023-07-10T14:01:22.000Z\",\n                        \"updatedAt\": \"2023-07-10T14:01:22.000Z\"\n                    }\n                },\n                {\n                    \"id\": 8,\n                    \"name_product\": \"Nordic Floor Lamp\",\n                    \"price\": 30,\n                    \"CategoryId\": 4,\n                    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n                    \"Order_Product\": {\n                        \"ProductId\": 8,\n                        \"OrderId\": 4,\n                        \"createdAt\": \"2023-07-10T14:01:22.000Z\",\n                        \"updatedAt\": \"2023-07-10T14:01:22.000Z\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "LOGOUT USER",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "localhost:3000/users/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "LOGOUT USER",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{tokenUser}}",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "localhost:3000/users/logout",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"users",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "51"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"33-BYLTVWIjgiSjZr2lM56K9QGLDrg\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:02:20 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"You have been successfully logged out\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "CREATE CATEGORY",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name_category\": \"Floor Lights\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/categories",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATE CATEGORY",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_category\": \"Floor Lights uuuuuu\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/categories",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "187"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"bb-AnY9iKmczx4ZR3b1ZBxEdm5Z17Y\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:02:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Category created successfully\",\n    \"category_created\": {\n        \"id\": 5,\n        \"name_category\": \"Floor Lights uuuuuu\",\n        \"updatedAt\": \"2023-07-10T14:02:57.864Z\",\n        \"createdAt\": \"2023-07-10T14:02:57.864Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UPDATE CATEGORY",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name_category\": \"Floor Lamps eeeeeeeeee\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/categories/id/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"id",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UPDATE CATEGORY",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name_category\": \"Floor Lamps eeeeeeeeee\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/categories/id/5",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categories",
+										"id",
+										"5"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "185"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b9-w6o7fmWgzq9S/5nxsScmdPtkUMs\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:03:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"msg\": \"Category updated successfully\",\n    \"categoryUpdated\": {\n        \"id\": 5,\n        \"name_category\": \"Floor Lamps eeeeeeeeee\",\n        \"createdAt\": \"2023-07-10T14:02:57.000Z\",\n        \"updatedAt\": \"2023-07-10T14:03:09.000Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DELETE CATEGORY",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/id/5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"id",
+								"5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DELETE CATEGORY",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/categories/id/5",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categories",
+										"id",
+										"5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "html",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/html; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-sul14YLY1urd7TlMShIQ/l8x//w\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:03:25 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "Category deleted successfully"
+						}
+					]
+				},
+				{
+					"name": "SHOW ONE CATEGORY BY ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/id/1",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"id",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ONE PROCUT BY ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/categories/id/1",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categories",
+										"id",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"74-wypiYvDyBbJ5EIwxOodvi36+b/E\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:04:49 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name_category\": \"Wall Lights\",\n    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n    \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "SHOW ONE CATEGORY BY NAME",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/name/li",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"name",
+								"li"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ONE PRODUCT BY NAME",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/categories/name/li",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categories",
+										"name",
+										"li"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "116"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"74-wypiYvDyBbJ5EIwxOodvi36+b/E\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:05:37 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name_category\": \"Wall Lights\",\n    \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n    \"updatedAt\": \"2023-07-10T13:45:05.000Z\"\n}"
+						}
+					]
+				},
+				{
+					"name": "SHOW ALL CATEGORIES with its products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/categories/getAll",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"categories",
+								"getAll"
+							]
+						},
+						"description": "Muestra todas las categorias y los productos que hay en ellas"
+					},
+					"response": [
+						{
+							"name": "SHOW ALL CATEGORIES with its products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/categories/getAll",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"categories",
+										"getAll"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "895"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"37f-019TOyJ4YCIZv03k2UOyINUfJsA\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:05:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"name_category\": \"Wall Lights\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Products\": [\n            {\n                \"id\": 2,\n                \"name_product\": \"Industrial Wall Lamp\"\n            },\n            {\n                \"id\": 1,\n                \"name_product\": \"Art Deco Gatsby Lamp Brace\"\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"name_category\": \"Pendant Lights\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Products\": [\n            {\n                \"id\": 4,\n                \"name_product\": \"Industrial Lamp\"\n            },\n            {\n                \"id\": 3,\n                \"name_product\": \"Art Deco Gatsby Lamp\"\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"name_category\": \"Ceiling Lights\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Products\": [\n            {\n                \"id\": 6,\n                \"name_product\": \"Art Deco Ceiling Lamp\"\n            },\n            {\n                \"id\": 5,\n                \"name_product\": \"Modern Rail Black\"\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"name_category\": \"Floor Lamp\",\n        \"createdAt\": \"2023-07-10T13:45:05.000Z\",\n        \"updatedAt\": \"2023-07-10T13:45:05.000Z\",\n        \"Products\": [\n            {\n                \"id\": 8,\n                \"name_product\": \"Nordic Floor Lamp\"\n            },\n            {\n                \"id\": 7,\n                \"name_product\": \"Modern Floor Lamp\"\n            }\n        ]\n    }\n]"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "CREATE ORDER",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{tokenAdmin}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "{{tokenUser}}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ProductId\": [1, 30, 33]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/orders",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CREATE ORDER",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "{{tokenAdmin}}",
+										"type": "text",
+										"disabled": true
+									},
+									{
+										"key": "Authorization",
+										"value": "{{tokenUser}}",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"ProductId\": [6, 7, 8]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/orders",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "179"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"b3-h6ggoEzXcLBmPf+JNu+Xl+5tn6s\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:01:22 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Order created successfully\",\n    \"order_created\": {\n        \"id\": 4,\n        \"UserId\": 3,\n        \"updatedAt\": \"2023-07-10T14:01:22.453Z\",\n        \"createdAt\": \"2023-07-10T14:01:22.453Z\"\n    },\n    \"products_added\": [\n        6,\n        7,\n        8\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "SHOW ALL ORDERS",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/orders/all",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"orders",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SHOW ALL ORDERS",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/orders/all",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"orders",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "856"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"358-bOYPkKILldFN4B/REphLGWSDoM0\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 10 Jul 2023 14:06:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"id\": 1,\n        \"UserId\": 2,\n        \"createdAt\": \"2023-07-10T14:00:48.000Z\",\n        \"updatedAt\": \"2023-07-10T14:00:48.000Z\",\n        \"Products\": [\n            {\n                \"id\": 1,\n                \"name_product\": \"Art Deco Gatsby Lamp Brace\",\n                \"price\": 50\n            }\n        ]\n    },\n    {\n        \"id\": 2,\n        \"UserId\": 2,\n        \"createdAt\": \"2023-07-10T14:00:57.000Z\",\n        \"updatedAt\": \"2023-07-10T14:00:57.000Z\",\n        \"Products\": [\n            {\n                \"id\": 1,\n                \"name_product\": \"Art Deco Gatsby Lamp Brace\",\n                \"price\": 50\n            },\n            {\n                \"id\": 5,\n                \"name_product\": \"Modern Rail Black\",\n                \"price\": 120\n            }\n        ]\n    },\n    {\n        \"id\": 3,\n        \"UserId\": 3,\n        \"createdAt\": \"2023-07-10T14:01:11.000Z\",\n        \"updatedAt\": \"2023-07-10T14:01:11.000Z\",\n        \"Products\": [\n            {\n                \"id\": 5,\n                \"name_product\": \"Modern Rail Black\",\n                \"price\": 120\n            }\n        ]\n    },\n    {\n        \"id\": 4,\n        \"UserId\": 3,\n        \"createdAt\": \"2023-07-10T14:01:22.000Z\",\n        \"updatedAt\": \"2023-07-10T14:01:22.000Z\",\n        \"Products\": [\n            {\n                \"id\": 6,\n                \"name_product\": \"Art Deco Ceiling Lamp\",\n                \"price\": 420\n            },\n            {\n                \"id\": 7,\n                \"name_product\": \"Modern Floor Lamp\",\n                \"price\": 100\n            },\n            {\n                \"id\": 8,\n                \"name_product\": \"Nordic Floor Lamp\",\n                \"price\": 30\n            }\n        ]\n    }\n]"
+						}
+					]
+				}
+			]
+		}
+	]
+}
